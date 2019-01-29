@@ -1,0 +1,16 @@
+{
+  "name": "polyfills-example",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Polyfill service example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Comandeer",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "whiskers": "^0.4.0"
+  }
+}

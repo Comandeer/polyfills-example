@@ -10,8 +10,12 @@ app.engine( '.html', whiskers.__express );
 app.set( 'views', path.join( __dirname, '/views' ) );
 
 app.get( '/', ( req, res ) => {
+	const nonce = crypto.randomBytes( 20 ).toString( 'hex' );
+
+	res.set( 'Content-Security-Policy',
+		`default-src 'none'; connect-src http://localhost:3000/data.json; script-src 'nonce-${ nonce }' 'strict-dynamic'` );
 	res.render( 'index.html', {
-		nonce: crypto.randomBytes( 20 ).toString( 'hex' )
+		nonce
 	} );
 } );
 app.get( '/polyfills', ( req, res ) => {

@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 
 app.engine( '.html', whiskers.__express );
-app.set( 'views', path.join( __dirname, '/views' ) );
+app.set( 'views', path.join( __dirname, 'views' ) );
 
 app.get( '/', ( req, res ) => {
 	const nonce = crypto.randomBytes( 20 ).toString( 'hex' );

@@ -7,11 +7,11 @@
 	<script nonce="{nonce}">
 	( function() {
 		const features = {
-			'JSON.render': () => {
+			[ 'JSON.render' ]() {
 				return 'render' in JSON;
 			},
 
-			'fetch.JSON': () => {
+			[ 'fetch.JSON' ]() {
 				return 'JSON' in fetch;
 			}
 		};
@@ -24,7 +24,7 @@
 		}, [] );
 
 		if ( toLoad.length > 0 ) {
-			createScript( `/polyfills?features=${ encodeURI( toLoad.join( ',' ) ) }` );
+			createScript( `/polyfills?features=${ encodeURIComponent( toLoad.join( ',' ) ) }` );
 		}
 
 		createScript( '/app.js' );

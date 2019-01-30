@@ -1,10 +1,10 @@
 const availablePolyfills = {
 	'fetch.JSON': `( function() {
-		fetch.JSON = function( URL) {
+		fetch.JSON = function( URL ) {
 			return fetch( URL ).then( ( res ) => {
 				return res.json();
 			} );
-		}
+		};
 	}() );`,
 
 	'JSON.render': `( function() {

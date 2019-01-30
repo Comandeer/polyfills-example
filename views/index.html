@@ -23,11 +23,10 @@
 			return toLoad;
 		}, [] );
 
-		if ( toLoad.length === 0 ) {
-			return;
+		if ( toLoad.length > 0 ) {
+			createScript( `/polyfills?features=${ encodeURI( toLoad.join( ',' ) ) }` );
 		}
 
-		createScript( `/polyfills?features=${ encodeURI( toLoad.join( ',' ) ) }` );
 		createScript( '/app.js' );
 
 		function createScript( src ) {

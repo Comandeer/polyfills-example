@@ -32,9 +32,11 @@
 
 		function createScript( src ) {
 			const script = document.createElement( 'script' );
+
 			script.defer = true;
 			script.async = false;
 			script.src = src;
+
 			document.head.appendChild( script );
 		}
 	}() );

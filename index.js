@@ -21,6 +21,7 @@ app.get( '/', ( req, res ) => {
 app.get( '/polyfills', ( req, res ) => {
 	const features = req.query.features.split( ',' );
 
+	res.set( 'Content-Type', 'application/javascript' );
 	res.send( buildPolyfillLib( features ) );
 } );
 app.use( express.static( 'public' ) );
